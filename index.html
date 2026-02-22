@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclipse Perfume | Luxury Fragrance</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0c0c12;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:var(--dark);
+  color:white;
+}
+
+/* ===== NAVBAR ===== */
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.5);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+.logo{
+  font-family:'Playfair Display', serif;
+  font-size:24px;
+  letter-spacing:2px;
+  color:var(--gold);
+}
+
+nav{
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  font-weight:300;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* Hamburger */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1618354691322-7e3b1dfcb8df') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+  position:relative;
+  max-width:800px;
+}
+
+.hero h1{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(32px, 6vw, 70px);
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:clamp(14px, 2.5vw, 18px);
+  margin-bottom:30px;
+  font-weight:300;
+}
+
+.btn{
+  padding:14px 38px;
+  background:var(--gold);
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:white;
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:80px 6%;
+  text-align:center;
+}
+
+.section h2{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(26px,4vw,42px);
+  margin-bottom:50px;
+}
+
+/* ===== PRODUCTS ===== */
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#15151c;
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 15px 30px rgba(212,175,55,0.15);
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.price{
+  color:var(--gold);
+  margin-top:8px;
+}
+
+/* ===== STORY ===== */
+.story{
+  max-width:800px;
+  margin:auto;
+  font-weight:300;
+  line-height:1.8;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:black;
+  padding:40px 20px;
+  text-align:center;
+  color:gray;
+  font-size:14px;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+
+  nav{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#111;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    display:none;
+    padding:20px 0;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>ECLIPSE PERFUME</h2>
+<a href="cart.html" class="cart-icon">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+
+  <div class="logo">ECLIPSE</div>
+  <nav id="navLinks">
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Unveil The Power of Scent</h1>
+    <p>Luxury fragrances crafted for bold personalities and unforgettable impressions.</p>
+    <a href="#" class="btn">Explore Collection</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Signature Collection</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
+      <h3>Eclipse Noir</h3>
+      <p class="price">₹2,499</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+      <h3>Midnight Gold</h3>
+      <p class="price">₹2,999</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+      <h3>Lunar Essence</h3>
+      <p class="price">₹1,999</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Philosophy</h2>
+  <div class="story">
+    Eclipse Perfume is inspired by mystery, elegance, and confidence.
+    Every fragrance is designed to leave a powerful and lasting impression.
+    We believe scent is identity.
+  </div>
+</section>
+
+<footer>
+  © 2026 Eclipse Perfume. All rights reserved.
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
