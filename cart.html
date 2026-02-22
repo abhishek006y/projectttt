@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart - Eclipse Perfume</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+padding:20px;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.cart-item{
+background:#1a1a1a;
+padding:15px;
+margin:15px 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border:1px solid #333;
+}
+
+.quantity{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+button{
+background:#d4af37;
+border:none;
+padding:6px 12px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:white;
+}
+
+.total{
+text-align:right;
+font-size:22px;
+margin-top:20px;
+color:#d4af37;
+}
+
+@media(max-width:600px){
+.cart-item{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<h1>Your Cart</h1>
+
+<div id="cart-items"></div>
+
+<div class="total">
+Total: ₹<span id="total-price">0</span>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cart-items");
+let total = 0;
+
+function renderCart(){
+container.innerHTML="";
+total=0;
+
+cart.forEach((item,index)=>{
+
+total += item.price * item.quantity;
+
+container.innerHTML += `
+<div class="cart-item">
+<div>
+<h3>${item.name}</h3>
+<p>₹${item.price}</p>
+</div>
+
+<div class="quantity">
+<button onclick="decrease(${index})">-</button>
+<span>${item.quantity}</span>
+<button onclick="increase(${index})">+</button>
+<button onclick="removeItem(${index})">Remove</button>
+</div>
+</div>
+`;
+});
+
+document.getElementById("total-price").innerText = total;
+}
+
+function increase(index){
+cart[index].quantity++;
+localStorage.setItem("cart",JSON.stringify(cart));
+renderCart();
+}
+
+function decrease(index){
+if(cart[index].quantity>1){
+cart[index].quantity--;
+}else{
+cart.splice(index,1);
+}
+localStorage.setItem("cart",JSON.stringify(cart));
+renderCart();
+}
+
+function removeItem(index){
+cart.splice(index,1);
+localStorage.setItem("cart",JSON.stringify(cart));
+renderCart();
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
