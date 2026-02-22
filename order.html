@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eclipse Perfume</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    background:#111;
+    color:white;
+}
+
+/* Main content pushes footer down */
+.main-content{
+    flex:1;
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* ===== PREMIUM FOOTER ===== */
+footer{
+    background:#000;
+    color:#d4af37;
+    padding:60px 20px 30px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:40px;
+}
+
+.footer-logo{
+    font-size:24px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:white;
+}
+
+.footer-logo span{
+    color:#d4af37;
+}
+
+.footer-section h4{
+    margin-bottom:20px;
+    color:white;
+    font-size:16px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section ul li a{
+    text-decoration:none;
+    color:#d4af37;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.footer-section ul li a:hover{
+    color:white;
+}
+
+/* Newsletter */
+.newsletter input{
+    padding:10px;
+    width:100%;
+    margin-bottom:10px;
+    border:none;
+    outline:none;
+}
+
+.newsletter button{
+    padding:10px;
+    width:100%;
+    background:#d4af37;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.newsletter button:hover{
+    background:white;
+}
+
+.footer-bottom{
+    text-align:center;
+    margin-top:40px;
+    padding-top:20px;
+    border-top:1px solid #333;
+    font-size:14px;
+    color:#aaa;
+}
+
+/* Responsive spacing */
+@media(max-width:600px){
+    .main-content{
+        padding:40px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header style="padding:20px; text-align:center;">
+    <h2>ECLIPSE PERFUME</h2>
+</header>
+
+<div class="main-content">
+    <h1>Welcome to Eclipse</h1>
+    <p>Luxury fragrances crafted in darkness.</p>
+</div>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-section">
+        <div class="footer-logo">ECLIPSE <span>PERFUME</span></div>
+        <p style="margin-top:15px; font-size:14px; color:#aaa;">
+            Crafted in Darkness. Designed for Presence.
+            Premium long-lasting fragrances made for bold personalities.
+        </p>
+    </div>
+
+    <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Customer Care</h4>
+        <ul>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Track Order</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section newsletter">
+        <h4>Join The Eclipse</h4>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+      © 2026 Eclipse Perfume. All Rights Reserved.
+  </div>
+</footer>
+
+</body>
+</html>
