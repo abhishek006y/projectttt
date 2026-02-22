@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Eclipse Perfume</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0c0c12;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:var(--dark);
+  color:white;
+}
+
+/* NAVBAR */
+header{
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:black;
+}
+
+.logo{
+  font-family:'Playfair Display', serif;
+  color:var(--gold);
+  font-size:24px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:300;
+}
+
+/* SECTION */
+.section{
+  padding:80px 6%;
+  text-align:center;
+}
+
+.section h1{
+  font-family:'Playfair Display', serif;
+  margin-bottom:40px;
+  font-size:clamp(28px,4vw,42px);
+}
+
+/* CONTACT GRID */
+.contact-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.contact-info{
+  text-align:left;
+  line-height:1.8;
+}
+
+.contact-info h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+form{
+  background:#15151c;
+  padding:30px;
+  border-radius:15px;
+  text-align:left;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:none;
+  background:#1f1f27;
+  color:white;
+  border-radius:8px;
+}
+
+button{
+  padding:12px 25px;
+  background:var(--gold);
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:500;
+}
+
+footer{
+  background:black;
+  padding:30px;
+  text-align:center;
+  color:gray;
+  font-size:14px;
+  margin-top:60px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ECLIPSE</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<section class="section">
+  <h1>Contact Us</h1>
+
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <p>Email: info@eclipseperfume.com</p>
+      <p>Phone: +91 98765 43210</p>
+      <p>Location: India</p>
+      <br>
+      <h3>Follow Us</h3>
+      <p>Instagram: @eclipseperfume</p>
+      <p>Facebook: Eclipse Perfume</p>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Eclipse Perfume. All rights reserved.
+</footer>
+
+</body>
+</html>
